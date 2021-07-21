@@ -1,0 +1,183 @@
+{% extends "smartmin/read.html" %}
+{% load smartmin %}
+{% block title %}{{ block.super }}  | Add Animal {% endblock title %}
+{% block page_title %} Animal Details {% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12 buttons">
+      {% block read-buttons %}
+      {% if view.edit_button %}
+      <a class="btn btn-primary pull-right" href="../../update/{{ object.id }}/">Edit</a>
+      {% endif %}
+      {% endblock %}
+    </div>
+</div>
+<div class="layout layout-main-right layout-stack-sm row">
+
+        <div class="col-md-3 col-sm-4 layout-sidebar">
+          <ul id="myTab" class="nav nav-layout-sidebar nav-stacked">
+            <li class="active">
+              <a href="#identity-tab" data-toggle="tab">
+              &nbsp;&nbsp;Identity
+              </a>
+            </li>
+            <li>
+              <a href="#description-tab" data-toggle="tab">
+              &nbsp;&nbsp;Description
+              </a>
+            </li>
+
+            <li>
+              <a href="#calfhood-tab" data-toggle="tab">
+              &nbsp;&nbsp;Calfhood
+              </a>
+            </li>
+
+            <li>
+              <a href="#status-tab" data-toggle="tab">
+              &nbsp;&nbsp;Status
+              </a>
+            </li>
+          </ul>
+
+        </div> <!-- /.col -->
+
+
+
+        <div class="col-md-9 col-sm-8 layout-main">
+
+          <div id="settings-content" class="tab-content stacked-content">
+
+            <div class="tab-pane fade in active" id="identity-tab">
+                 <table class="table table-striped">
+                    <tbody>
+                      <tr class="read-farmguru-id">
+                        <td class="read-label">Farmguru Id</td>
+                        <td class="read-value">{{ object.id }}&nbsp;</td>
+                      </tr>
+                      <tr class="read-ear-tag">
+                        <td class="read-label">Ear Tag</td>
+                        <td class="read-value">{{ object.ear_tag }}&nbsp;</td>
+                      </tr>
+                      <tr class="read-animal-id">
+                        <td class="read-label">Animal Id</td>
+                        <td class="read-value">{{ object.animal_id }}&nbsp;</td>
+                      </tr>
+                      <tr class="read-electronic-id">
+                        <td class="read-label">Electronic Id</td>
+                        <td class="read-value">{{ object.electronic_id }}&nbsp;</td>
+                      </tr>
+                      <tr class="read-alt-id">
+                        <td class="read-label">Alt Id</td>
+                        <td class="read-value">{{ object.alt_id }}&nbsp;</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+
+            </div> <!-- /.tab-pane -->
+
+            <div class="tab-pane" id="description-tab">
+              <table class="table table-striped">
+                <tbody>
+                   <tr class="read-color-id">
+                    <td class="read-label">Color Markings</td>
+                    <td class="read-value">{{ object.color }}&nbsp;</td>
+                  </tr>
+                  <tr class="read-gender-id">
+                    <td class="read-label">Gender</td>
+                    <td class="read-value">{{ object.gender}}&nbsp;</td>
+                  </tr>
+                  <tr class="read-breed-id">
+                    <td class="read-label">Breed</td>
+                    <td class="read-value">{{ object.breed }}&nbsp;</td>
+                  </tr>
+                  <tr class="read-sire-id">
+                    <td class="read-label">Sire</td>
+                    <td class="read-value">{{ object.sire }}&nbsp;</td>
+                  </tr>
+                  <tr class="read-dam-id">
+                    <td class="read-label">Dam</td>
+                    <td class="read-value">{{ object.dam }}&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> <!-- /.tab-pane -->
+
+            <div class="tab-pane fade" id="calfhood-tab">
+              <table class="table table-striped">
+                <tbody>
+                  <tr class="read-birthdate-id">
+                    <td class="read-label">Birth date</td>
+                    <td class="read-value">{{ object.birth_date }}&nbsp;</td>
+                  </tr>
+                  <tr class="read-birthweight-tag">
+                    <td class="read-label">Birth weight</td>
+                    <td class="read-value">{{ object.birth_weight }}&nbsp;</td>
+                  </tr>
+                  <tr class="read-weaningdate-id">
+                    <td class="read-label">Weaning date</td>
+                    <td class="read-value">{{ object.weaning_date }}&nbsp;</td>
+                  </tr>
+                  <tr class="read-weaningweight-id">
+                    <td class="read-label">Weaning weight</td>
+                    <td class="read-value">{{ object.weaning_weight }}&nbsp;</td>
+                  </tr>
+                  <tr class="read-yearlingdate-id">
+                    <td class="read-label">Yearling date</td>
+                    <td class="read-value">{{ object.yearling_date }}&nbsp;</td>
+                  </tr>
+                  <tr class="read-yearlingweight-id">
+                    <td class="read-label">Yearling weight</td>
+                    <td class="read-value">{{ object.yearling_weight }}&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> <!-- /.tab-pane -->
+
+            <div class="tab-pane fade" id="status-tab">
+               <table class="table table-striped">
+               <tbody>
+                <tr class="read-weaningdate-id">
+                    <td class="read-label">Status</td>
+                    <td class="read-value">{{ object.status }}&nbsp;</td>
+                  </tr>
+                  <tr class="read-weaningweight-id">
+                    <td class="read-label">Created</td>
+                    <td class="read-value">{{ object.created }}&nbsp;</td>
+                  </tr>
+                  <tr class="read-yearlingdate-id">
+                    <td class="read-label">Updated</td>
+                    <td class="read-value">{{ object.modified }}&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> <!-- /.tab-pane -->
+
+          </div> <!-- /.tab-content -->
+
+        </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+<div class="row">
+<div role="tabpanel">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#health" aria-controls="health" role="tab" data-toggle="tab">Health</a></li>
+    <li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
+    <li role="presentation"><a href="#documents" aria-controls="documents" role="tab" data-toggle="tab">Documents</a></li>
+    <li role="presentation"><a href="#transactions" aria-controls="transactions" role="tab" data-toggle="tab">Transactions</a></li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="health">{{ treatment }}</div>
+    <div role="tabpanel" class="tab-pane" id="notes">{{ notes }}</div>
+    <div role="tabpanel" class="tab-pane" id="documents">{{ animal_documents }}</div>
+    <div role="tabpanel" class="tab-pane" id="transactions">{{ transactions }}</div>
+  </div>
+</div>
+ </div>
+
+
+{% endblock %}

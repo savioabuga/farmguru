@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %} Farmguru {% endblock %}</title>
+		<meta name="description" content="">
+		<meta name="author" content="Farmguru Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{% load staticfiles %}
+        <!-- JS Libs -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery.js"><\/script>')</script>
+        {% load bootstrap3 %}
+        {# Load CSS and JavaScript #}
+        {# Load CSS and JavaScript #}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+		<!-- PrettyCheckable Styles -->
+		<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}css/plugins/prettycheckable/prettyCheckable.css'>
+
+		<!-- Styles -->
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/sangom-orange.css">
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/custm.css">
+
+
+		<!-- IE8 support of media queries and CSS 2/3 selectors -->
+	</head>
+	<body>
+
+		<!-- Full height wrapper -->
+		<div id="wrapper">
+
+			<!-- Main page header -->
+			<header id="header" class="container">
+
+				<h1>
+					<!-- Main page logo -->
+					<a href="/" class="brand">farmguru</a>
+
+				</h1>
+
+				<!-- User profile -->
+				<div class="user-profile">
+					<figure>
+
+						<!-- User profile avatar
+						<img alt="avatar" src="">
+						 -->
+						<!-- User profile info -->
+
+						<!-- /User profile info -->
+
+					</figure>
+				</div>
+		<!-- /Full height wrapper -->
+
+				<!-- /User profile -->
+                <!-- Main navigation -->
+				<nav class="main-navigation navbar navbar-default" role="navigation">
+
+					<!-- Collapse navigation for mobile -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-navigation-collapse">
+							<span class="elusive icon-file"></span> Online store
+						</button>
+					</div>
+					<!-- /Collapse navigation for mobile -->
+
+					<!-- Navigation -->
+					<div class="main-navigation-collapse collapse navbar-collapse">
+
+						<!-- Navigation items -->
+						<ul class="nav navbar-nav">
+
+							<li>
+								<a href="{% url 'animals.animal_list' %}">Livestock</a>
+							</li>
+
+
+							<!-- Dropdown navigation items -->
+
+							<!-- /Dropdown navigation items -->
+
+							<!-- Dropdown navigation with multi-level dropdown -->
+
+							<!-- /Dropdown navigation with multi-level dropdown -->
+
+							<li>
+								<a href="{% url "account_logout" %}"><span class="elusive icon-lock-alt"></span> Logout</a>
+							</li>
+						</ul>
+						<!-- /Navigation items -->
+
+
+					</div>
+					<!-- /Navigation -->
+
+				</nav>
+				<!-- /Main navigation -->
+
+
+
+			</header>
+			<!-- /Main page header -->
+
+			<!-- Main page container -->
+			<section class="container" role="main">
+			<!-- Grid row -->
+				<div class="row">
+                {% bootstrap_messages %}
+                {% block secondary_menu %} {% endblock %}
+
+                <!-- Data block -->
+                <article class="col-sm-12">
+                    <div class="green data-block">
+                        <header>
+                            <h2>{% block header %}{% endblock %}</h2>
+                            <ul class="data-header-actions">
+                                {% block header_actions %}{% endblock %}
+                            </ul>
+                        </header>
+
+                        <section>
+                            <div class="row">
+                                {% block content %}
+
+                                {% endblock %}
+                            </div>
+                        </section>
+
+                    </div>
+                </article>
+        </div>
+	 	<!-- Main page footer
+		<footer id="footer">
+			<div class="container">
+
+				<!-- Footer info
+				<p>&copy; farmguru</p>
+				<!-- Footer back to top
+				<a href="#top" class="btn btn-alt"><span class="icon-arrow-up"></span></a>
+
+			</div>
+		</footer>
+		<!-- /Main page footer -->
+
+    </div>
+      {# compress js #}
+      <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.pjax.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}js/scripts.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+
+
+      {% block extra-script %}{% endblock %}
+
+      {# media associated with any form we are displaying #}
+      {% if form %}
+      {{ form.media }}
+      {% endif %}
+
+      {% block script %}{% endblock %}
+      {# endcompress #}
+
+	</body>
+</html>

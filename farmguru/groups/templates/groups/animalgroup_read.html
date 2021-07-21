@@ -1,0 +1,25 @@
+{% extends "smartmin/read.html" %}
+{% load smartmin %}
+{% block title %}{{ block.super }}  | Animal Group Details {% endblock title %}
+{% block page_title %} Animal Group Details {% endblock %}
+{% block content %}
+{{ block.super }}
+<div class="row">
+<div role="tabpanel">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#health" aria-controls="health" role="tab" data-toggle="tab">Health</a></li>
+    <li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
+    <li role="presentation"><a href="#transactions" aria-controls="transactions" role="tab" data-toggle="tab">Transactions</a></li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="health">{{ treatment }}</div>
+    <div role="tabpanel" class="tab-pane" id="notes">{{ animalgroupnotes }}</div>
+    <div role="tabpanel" class="tab-pane" id="transactions">{{ transactions }}</div>
+  </div>
+</div>
+ </div>
+
+
+{% endblock %}

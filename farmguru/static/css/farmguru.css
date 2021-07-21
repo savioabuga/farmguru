@@ -1,0 +1,4 @@
+/* Preview for the fileupload */
+.preview img {
+    max-height:50px;
+}

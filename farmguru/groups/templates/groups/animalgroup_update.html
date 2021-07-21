@@ -1,0 +1,6 @@
+{% extends "smartmin/update.html" %}
+{% block title %}{{ block.super }}  | Update Animal Group {% endblock title %}
+{% block page_title %} Update {{ object|capfirst }} {% endblock %}
+{% block content %}
+    {% include 'groups/animalgroup_form.html' %}
+{% endblock %}
